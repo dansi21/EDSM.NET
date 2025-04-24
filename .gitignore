@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/EDSM.NET/CopilotIndices/17.12.38.29086
+/.vs/EDSM.NET/DesignTimeBuild
+/.vs/EDSM.NET/FileContentIndex
+/.vs/EDSM.NET/v17
+/.vs
+/EDSM.NET/obj
