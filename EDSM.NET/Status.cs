@@ -1,24 +1,17 @@
 ﻿using EDSM.NET.Models;
 using System.Net.Http.Json;
 
-namespace EDSM.NET
+namespace EDSM.NET;
+
+public class Status
 {
-    public class Status
+    public async static Task<StatusModel?> GetStatus() 
     {
-        public async static Task<StatusModel> GetStatus() 
-        {
-            HttpClient client = new();
-            await client.GetFromJsonAsync<StatusModel>("https://www.edsm.net/api-v1/status").ContinueWith(task =>
-            {
-                if (task.IsCompletedSuccessfully)
-                {
-                    return task.Result;
-                }
-                else
-                {
-                    throw new Exception("Failed to get status from EDSM API");
-                }
-            });
-        }
+        HttpClient client = new();
+        HttpResponseMessage response = await client.GetAsync("https://www.edsm.net/api-status-v1/elite-server");
+        
+        return response.IsSuccessStatusCode
+            ? await response.Content.ReadFromJsonAsync<StatusModel>(options: System.Text.Json.JsonSerializerOptions.Web)
+            : throw new Exception($"Failed to get status from EDSM API. Status code: {response.StatusCode}");
     }
 }

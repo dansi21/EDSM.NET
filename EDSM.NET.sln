@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDSM.NET", "EDSM.NET\EDSM.NET.csproj", "{07E0C1D9-509D-49A9-B5B0-DDBFF2810D45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDSM.NET.Tests", "EDSM.NET.Tests\EDSM.NET.Tests.csproj", "{570528D8-F889-419F-9132-1CA98C19B79E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{07E0C1D9-509D-49A9-B5B0-DDBFF2810D45} = {07E0C1D9-509D-49A9-B5B0-DDBFF2810D45}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{07E0C1D9-509D-49A9-B5B0-DDBFF2810D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07E0C1D9-509D-49A9-B5B0-DDBFF2810D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07E0C1D9-509D-49A9-B5B0-DDBFF2810D45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{570528D8-F889-419F-9132-1CA98C19B79E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{570528D8-F889-419F-9132-1CA98C19B79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{570528D8-F889-419F-9132-1CA98C19B79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{570528D8-F889-419F-9132-1CA98C19B79E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
