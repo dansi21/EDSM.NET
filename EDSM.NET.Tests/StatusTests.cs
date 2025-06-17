@@ -5,7 +5,7 @@ public class StatusTests
     [Fact]
     public async Task Status_should_be_returned()
     {
-        await Status.GetStatus().ContinueWith(task =>
+        await Status.Status.GetStatus().ContinueWith(task =>
         {
             if (task.IsCompletedSuccessfully)
             {
@@ -13,7 +13,7 @@ public class StatusTests
             }
             else
             {
-                Assert.True(false, "Failed to get status from EDSM API");
+                Assert.Fail("Failed to get status from EDSM API");
             }
         });
     }
