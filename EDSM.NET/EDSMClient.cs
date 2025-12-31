@@ -3,7 +3,7 @@ using EDSM.NET.Models;
 
 namespace EDSM.NET
 {
-    public static class EdsmClient
+    public static class EDSMClient
     {
         private static readonly HttpClient _httpClient = new HttpClient
         {
