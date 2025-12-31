@@ -2,7 +2,7 @@
 
 namespace EDSM.NET.Test;
 
-public class UnitTest1
+public class StatusTests
 {
     [Fact]
     public async Task GetServerStatusAsync_ReturnsStatusModel()
@@ -24,8 +24,10 @@ public class UnitTest1
         using var cts = new CancellationTokenSource();
         cts.Cancel();
 
-        // Act & Assert
-        await Assert.ThrowsAsync<TaskCanceledException>(
-            async () => await EDSMClient.GetServerStatusAsync(cts.Token));
+        // Act
+        var act = () => EDSMClient.GetServerStatusAsync(cts.Token);
+
+        // Assert
+        await Assert.ThrowsAsync<TaskCanceledException>(act);
     }
 }
